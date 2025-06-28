@@ -12,3 +12,5 @@
 # Exclude all .tfvars files
 *.tfvars
 *.tfvars.json
+
+.DS_Store
