@@ -1,3 +1,4 @@
+#when using this module, you need to pass the following variables cant be empty
 variable "ami" {}
 variable "instance_type" {}
 variable "subnet_id" {}

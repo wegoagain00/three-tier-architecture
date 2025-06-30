@@ -1,3 +1,4 @@
+
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
   tags = {
@@ -61,7 +62,7 @@ resource "aws_route_table_association" "public" {
 
 resource "aws_route_table" "private" {
   vpc_id = aws_vpc.main.id
-
+  #have not added NAT Gateway yet
   route {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.main.id
@@ -81,9 +82,10 @@ resource "aws_route_table_association" "private" {
 
 
 
-
 resource "aws_security_group" "frontend_sg" {
   vpc_id = aws_vpc.main.id
+  # should be changed to allow. your IP address
+  # or a specific range of IPs for security purposes for ingress 22
   ingress {
     from_port   = 22
     to_port     = 22

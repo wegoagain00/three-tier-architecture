@@ -1,3 +1,6 @@
+# everyhting in terrraform is linked through ids, so we need to output the ids of the resources we create in this module
+# so that other modules can use them
+
 output "vpc_id" {
   value = aws_vpc.main.id
 }
